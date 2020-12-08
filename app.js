@@ -14,6 +14,28 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+// function to write team file
+// function writeToFile(fileName, data) {
+//     fs.writeFile("./output/" + fileName, data, function(error) {
+//         if (error) {throw error}
+//     })
+// }
+
+// function to initialize program
+function init() {
+    inquirer
+      .
+      .then((response) => {
+          let storeInfo = generateMarkdown(response)
+          console.log(storeInfo)
+          console.log(response)
+          writeToFile("team.html", storeInfo)
+      }
+  );
+}
+ 
+// function call to initialize program
+init();
 
 
 

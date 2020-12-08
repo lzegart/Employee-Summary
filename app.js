@@ -1,6 +1,8 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee");
+const questions = require("./lib/questions")
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -13,30 +15,6 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
-// function to write team file
-// function writeToFile(fileName, data) {
-//     fs.writeFile("./output/" + fileName, data, function(error) {
-//         if (error) {throw error}
-//     })
-// }
-
-// function to initialize program
-function init() {
-    inquirer
-      .
-      .then((response) => {
-          let storeInfo = generateMarkdown(response)
-          console.log(storeInfo)
-          console.log(response)
-          writeToFile("team.html", storeInfo)
-      }
-  );
-}
- 
-// function call to initialize program
-init();
-
 
 
 // After the user has input all employees desired, call the `render` function (required

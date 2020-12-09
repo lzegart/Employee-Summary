@@ -24,21 +24,7 @@ const questions = [
         name: 'role',
         choices: ['Intern', 'Engineer', 'Manager']
     },
-    {
-        type: 'input',
-        message: 'If you are an Intern, enter your school.',
-        name: 'school',
-    },
-    {
-        type: 'input',
-        message: 'If you are an Engineer, enter your GitHub username.',
-        name: 'github',
-    },
-    {
-        type: 'input',
-        message: 'If you are a Manager, enter your office umber.',
-        name: 'office',
-    },
+    
 ];
 
 
@@ -47,9 +33,45 @@ function init() {
     inquirer
       .prompt(questions)
       .then((response) => {
-          let storeInfo = render(response)
-          console.log(storeInfo)
-          console.log(response)
+        const role = response.role  
+        console.log(role)
+        if (role === "Intern") {
+            inquirer
+                .prompt(
+                    {
+                    type: 'input',
+                    message: 'If you are an Intern, enter your school.',
+                    name: 'school',
+                })
+                .then((internResponse) => {
+                    console.log(internResponse) 
+                })
+        } else if (role === "Engineer") {
+            inquirer
+                .prompt(
+                    {
+                        type: 'input',
+                        message: 'If you are an Engineer, enter your GitHub username.',
+                        name: 'github',
+                    })
+                .then((engineerResponse) => {
+                    console.log(engineerResponse) 
+                })
+        } else if (role === "Manager") {
+            inquirer
+                .prompt(
+                    {
+                        type: 'input',
+                        message: 'If you are a Manager, enter your office umber.',
+                        name: 'office',
+                    })
+                .then((managerResponse) => {
+                    console.log(managerResponse) 
+                })
+        }
+        // let storeInfo = render(response)
+        //   console.log(storeInfo)
+        //   console.log(response)
       }
   );
 }
@@ -59,4 +81,4 @@ init();
 
 
 
-// module.exports = questions 
+module.exports = questions 

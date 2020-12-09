@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const render = require('./lib/htmlRenderer')
 const fs = require('fs');
 
 const questions = [
@@ -38,4 +39,24 @@ const questions = [
         message: 'If you are a Manager, enter your office umber.',
         name: 'office',
     },
-]
+];
+
+
+// function to initialize questions
+function init() {
+    inquirer
+      .prompt(questions)
+      .then((response) => {
+          let storeInfo = render(response)
+          console.log(storeInfo)
+          console.log(response)
+      }
+  );
+}
+ 
+// function call to initialize qs
+init();
+
+
+
+// module.exports = questions 

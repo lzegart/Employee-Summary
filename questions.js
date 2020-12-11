@@ -1,32 +1,51 @@
 const inquirer = require('inquirer');
 const render = require('./lib/htmlRenderer')
 const fs = require('fs');
+const Intern = require('./lib/Intern');
 
 const questions = [
     {
         type: 'input',
-        message: 'What is your name?',
+        message: 'What is the employee name?',
         name: 'name',
     },
     {
         type: 'input',
-        message: 'What is your id?',
+        message: 'What is the employee id?',
         name: 'id',
     },
     {
         type: 'input',
-        message: 'What is your email?',
+        message: 'What is the employee email?',
         name: 'email',
     },
     {
         type: 'list',
-        message: 'What is your role?',
+        message: 'What is the employee role?',
         name: 'role',
         choices: ['Intern', 'Engineer', 'Manager']
     },
-
 ];
 
+// welcome and instructions
+// function welcome() {
+//     console.log(`Welcome to the team generator, please enter employee info.`);
+// }
+
+// team will consist of employee objects
+const team = [];
+
+// const employees = () => {
+// // here we define an empty Employee object
+//  Employee = {
+//      name: "",
+//      id: "",
+//      email: "",
+//      role: "",
+//      // school/ GH username/ office # ....?
+// //     role.response: [],
+//    };
+// };
 
 // function to initialize questions
 function init() {
@@ -38,37 +57,67 @@ function init() {
             if (role === "Intern") {
                 inquirer
                     .prompt(
-                        {
+                        [{
                             type: 'input',
-                            message: 'If you are an Intern, enter your school.',
+                            message: 'Enter intern school.',
                             name: 'school',
-                        })
+                        },
+                        {
+                            type: 'list',
+                            message: 'New employee?',
+                            name: 'new',
+                            choices: ['yes', 'no']
+                        },
+                    ])
                     .then((internResponse) => {
                         console.log(internResponse)
+                        let internEmployee = new Intern(response.name, response.id, response.email, internResponse.school)
+                        team.push(internEmployee)
+                        if(internResponse.new === 'yes') {
+                            init();
+                        } else {
+                            console.log(team)  
+                        }
                     })
             } else if (role === "Engineer") {
                 inquirer
                     .prompt(
                         {
                             type: 'input',
-                            message: 'If you are an Engineer, enter your GitHub username.',
+                            message: 'Enter engineer GitHub username.',
                             name: 'github',
                         })
                     .then((engineerResponse) => {
                         console.log(engineerResponse)
+                        let engineerEmployee = {
+                            name: response.name,
+                            id: response.id,
+                            email: response.email,
+                            role: response.role,
+                            github: engineerResponse.github
+                        }
+                        team.push(engineerEmployee)
                     })
             } else if (role === "Manager") {
                 inquirer
                     .prompt(
                         {
                             type: 'input',
-                            message: 'If you are a Manager, enter your office umber.',
+                            message: 'Enter manager office number.',
                             name: 'office',
                         })
                     .then((managerResponse) => {
                         console.log(managerResponse)
+                        let managerEmployee = {
+                            name: response.name,
+                            id: response.id,
+                            email: response.email,
+                            role: response.role,
+                            office: managerResponse.office
+                        }
+                        team.push(managerEmployee)
                     })
-            }
+            } 
         });
 }
 

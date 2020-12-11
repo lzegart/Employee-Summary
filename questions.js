@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const render = require('./lib/htmlRenderer')
 const fs = require('fs');
 const Intern = require('./lib/Intern');
+const Engineer = require('./lib/Engineer');
 
 const questions = [
     {
@@ -82,21 +83,27 @@ function init() {
             } else if (role === "Engineer") {
                 inquirer
                     .prompt(
-                        {
+                        [{
                             type: 'input',
                             message: 'Enter engineer GitHub username.',
                             name: 'github',
-                        })
+                        },
+                        {
+                            type: 'list',
+                            message: 'New employee?',
+                            name: 'new',
+                            choices: ['yes', 'no']
+                        },
+                    ])
                     .then((engineerResponse) => {
                         console.log(engineerResponse)
-                        let engineerEmployee = {
-                            name: response.name,
-                            id: response.id,
-                            email: response.email,
-                            role: response.role,
-                            github: engineerResponse.github
-                        }
+                        let engineerEmployee = new Engineer(response.name, response.id, response.email, engineerResponse.github)
                         team.push(engineerEmployee)
+                        if(engineerResponse.new === 'yes') {
+                            init();
+                        } else {
+                            console.log(team)  
+                        }
                     })
             } else if (role === "Manager") {
                 inquirer

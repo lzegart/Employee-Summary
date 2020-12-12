@@ -3,6 +3,7 @@ const render = require('./lib/htmlRenderer')
 const fs = require('fs');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
+const Manager = require('./lib/Manager');
 
 const questions = [
     {
@@ -28,25 +29,8 @@ const questions = [
     },
 ];
 
-// welcome and instructions
-// function welcome() {
-//     console.log(`Welcome to the team generator, please enter employee info.`);
-// }
-
 // team will consist of employee objects
 const team = [];
-
-// const employees = () => {
-// // here we define an empty Employee object
-//  Employee = {
-//      name: "",
-//      id: "",
-//      email: "",
-//      role: "",
-//      // school/ GH username/ office # ....?
-// //     role.response: [],
-//    };
-// };
 
 // function to initialize questions
 function init() {
@@ -108,21 +92,28 @@ function init() {
             } else if (role === "Manager") {
                 inquirer
                     .prompt(
-                        {
+                        [{
                             type: 'input',
-                            message: 'Enter manager office number.',
+                            message: 'Enter manager office number',
                             name: 'office',
-                        })
+                        },
+                        {
+                            type: 'list',
+                            message: 'New employee?',
+                            name: 'new',
+                            choices: ['yes', 'no']
+                        },
+                    ])
                     .then((managerResponse) => {
                         console.log(managerResponse)
-                        let managerEmployee = {
-                            name: response.name,
-                            id: response.id,
-                            email: response.email,
-                            role: response.role,
-                            office: managerResponse.office
-                        }
+                        let managerEmployee = new Manager(response.name, response.id, response.email, managerResponse.office)
+                            // if(err) throw err;
                         team.push(managerEmployee)
+                        if(managerResponse.new === 'yes') {
+                            init();
+                        } else {
+                            console.log(team)  
+                        }
                     })
             } 
         });

@@ -107,7 +107,6 @@ function init() {
                     .then((managerResponse) => {
                         console.log(managerResponse)
                         let managerEmployee = new Manager(response.name, response.id, response.email, managerResponse.office)
-                            // if(err) throw err;
                         team.push(managerEmployee)
                         if(managerResponse.new === 'yes') {
                             init();

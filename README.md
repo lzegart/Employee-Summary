@@ -1,1 +1,43 @@
-# Employee-Summary
+
+  No License 
+
+  # Employee Summary
+
+  ## Table of Contents
+  * [Description](#description)
+  * [Technologies & Usage](#technologies-&-usage) 
+  * [Installation](#installation)
+  * [License](#license)
+  * [Contributions](#contributions)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Description
+  This comand line interface creates an html page of your team members, displaying their name, email, id, role, and role-specific properties.
+
+  The program uses inquirer to prompt an array of questions about an employee, ask to add more employees, and then push responses to an array of Employees. This array of employee objects is then rendered in the html format and pushed to the output folder.
+
+  The final product is an html page of cards containing all employees that were entered with their relative information displayed for easy access to team contact and basic information.
+
+  ## Technologies & Usage
+  The application will be invoked by using the collowing command: `node app.js`.
+  *  html, css, node.js, JavaScript
+
+  ## Installation
+  The user must install inquirer nmp package and node modules by running `npm install` in the integrated terminal.
+
+  ## License
+  No License
+
+  ## Contributions
+  Please contact me if you would like to collaborate.
+
+  ## Tests
+  No tests yet.
+
+  ## Questions
+  For any further questions regarding this app, please contact:
+  * Email: laraezegart@gmail.com
+  * GitHub Profile: [https://github.com/lzegart]
+  * GitHub Username: lzegart
+  

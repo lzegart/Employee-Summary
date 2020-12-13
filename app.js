@@ -127,25 +127,18 @@ function init() {
 init();
 
 
-// function renderMain () {
-//     const HTML = render(team);
-//     fs.writeFile(outputPath, HTML, (err) => {
-//         if (err) throw err
-//     })
-// }
-
-// const writeIt = () => {
-//     if (!fs.existsSync(OUTPUT_DIR)) {
-//       fs.mkdirSync(OUTPUT_DIR);
-//     }
+const createTeam = () => {
+     if (!fs.existsSync(OUTPUT_DIR)) {
+       fs.mkdirSync(OUTPUT_DIR);
+     }
   
-//     fs.writeFile(outputPath, render(team), (err) => {
-//       if (err) throw err;
-//       console.log("Your file has been created in the output folder.")
-//     });
-//   };
+     fs.writeFile(outputPath, render(team), (err) => {
+       if (err) throw err;
+       console.log("Success!")
+     });
+   };
 
-//   writeIt();
+createTeam();
 
 
 // After the user has input all employees desired, call the `render` function (required

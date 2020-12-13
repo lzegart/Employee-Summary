@@ -5,11 +5,14 @@
 
   ## Table of Contents
   * [Description](#description)
-  * [Technologies & Usage](#technologies-&-usage) 
+  * [Usage](#usage)
+  * [Technologies](#technologies) 
   * [Installation](#installation)
   * [License](#license)
   * [Contributions](#contributions)
   * [Tests](#tests)
+  * [Links](#links)
+  * [Images](#images)
   * [Questions](#questions)
 
   ## Description
@@ -40,8 +43,12 @@
   ## Tests
   No tests yet.
 
-  ## Video Links
+  ## Links
   * Walkthrough: []
+
+  ## Images
+  Deployed webpage of team:
+  
 
   ## Questions
   For any further questions regarding this app, please contact:

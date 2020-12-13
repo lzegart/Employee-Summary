@@ -19,9 +19,14 @@
 
   The final product is an html page of cards containing all employees that were entered with their relative information displayed for easy access to team contact and basic information.
 
-  ## Technologies & Usage
+  ## Usage
   The application will be invoked by using the collowing command: `node app.js`.
-  *  html, css, node.js, JavaScript
+
+  ## Technologies
+  *  html 
+  *  css 
+  *  node.js 
+  *  JavaScript
 
   ## Installation
   The user must install inquirer nmp package and node modules by running `npm install` in the integrated terminal.
@@ -34,6 +39,9 @@
 
   ## Tests
   No tests yet.
+
+  ## Video Links
+  * Walkthrough: []
 
   ## Questions
   For any further questions regarding this app, please contact:

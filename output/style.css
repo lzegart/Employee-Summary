@@ -7,9 +7,10 @@ body {
 }
 
 #teamContainer {
-    display: flex;
+    
 }
 
 .employee-card {
     width: 250px;
+    margin: 20px 15px;
 }

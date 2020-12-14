@@ -117,6 +117,7 @@ function init() {
                             init();
                         } else {
                             console.log(team)  
+                            createTeam();
                         }
                     })
             } 
@@ -137,8 +138,6 @@ const createTeam = () => {
        console.log("Success!")
      });
    };
-
-createTeam();
 
 
 // After the user has input all employees desired, call the `render` function (required

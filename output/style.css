@@ -2,7 +2,14 @@ body {
     background-color: rgb(65, 217, 220);
 }
 
-.container-fluid {
+#jumboHeading {
     background-color: rgb(27, 143, 145);
 }
 
+#teamContainer {
+    display: flex;
+}
+
+.employee-card {
+    width: 250px;
+}

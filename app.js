@@ -67,6 +67,8 @@ function init() {
                             init();
                         } else {
                             console.log(team)  
+                            // function to render team and send to html is called 
+                            createTeam();
                         }
                     })
             } else if (role === "Engineer") {
@@ -92,6 +94,8 @@ function init() {
                             init();
                         } else {
                             console.log(team)  
+                            // function to render team and send to html is called 
+                            createTeam();
                         }
                     })
             } else if (role === "Manager") {

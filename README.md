@@ -44,11 +44,11 @@
   No tests yet.
 
   ## Links
-  * Walkthrough: []
+  * Walkthrough: [https://drive.google.com/file/d/1XWtn5PzmlHnvzPvudVXAXvSEZNkjnoEY/view]
 
   ## Images
   Deployed webpage of team:
-  
+  <img width="1426" alt="Employee Summary- Disney Team" src="https://user-images.githubusercontent.com/71571952/102169545-52f01d00-3e47-11eb-8f9b-422f5abb5476.png">
 
   ## Questions
   For any further questions regarding this app, please contact:
